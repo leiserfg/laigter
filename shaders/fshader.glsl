@@ -1,4 +1,4 @@
-#version 130
+#version 120
 
 /*
  * Laigter: an automatic map generator for lighting effects.
@@ -19,9 +19,8 @@
  * Contact: azagaya.games@gmail.com
  */
 
-in vec2 texCoord;
-in vec3 FragPos;
-out vec4 FragColor;
+varying vec2 texCoord;
+varying vec3 FragPos;
 
 uniform sampler2D texture;
 uniform sampler2D normalMap;
@@ -87,9 +86,9 @@ void main()
 
     vec4 l_color = tex*(vec4(diffuse,1.0)+vec4(specular,1.0)+vec4(ambientColor,1.0)*ambientIntensity*occlusion);
     if (light){
-        FragColor = l_color;
+        gl_FragColor = l_color;
     }else{
-        FragColor = tex;
+        gl_FragColor = tex;
     }
 }
 

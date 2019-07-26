@@ -1,4 +1,4 @@
-#version 130
+#version 120
 
 /*
  * Laigter: an automatic map generator for lighting effects.
@@ -19,10 +19,10 @@
  * Contact: azagaya.games@gmail.com
  */
 
-in vec3 aPos;
-in vec2 aTexCoord;
-out vec2 texCoord;
-out vec3 FragPos;
+attribute vec3 aPos;
+attribute vec2 aTexCoord;
+varying vec2 texCoord;
+varying vec3 FragPos;
 
 uniform mat4 transform;
 void main()
